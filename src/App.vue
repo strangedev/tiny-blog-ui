@@ -1,18 +1,21 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TagSelector :tags="tags"></TagSelector>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TagSelector from './components/TagSelector.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+      TagSelector
+  },
+    data: () => ({
+        tags: ["Apfel", "Himbeere", "Gehirnpilz", "Giraffentorte", "Ein Schwein"]
+    })
 }
 </script>
 
