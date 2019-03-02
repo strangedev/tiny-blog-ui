@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import BlogEntry from '../model/BlogEntry'
+    import BlogEntry from '../tiny-blog-api/tiny-blog-model/v1alpha/BlogEntry'
 
     export default {
         name: "BlogEntry",

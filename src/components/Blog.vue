@@ -19,7 +19,7 @@
     import TagSelector from "./TagSelector";
     import Collapsible from "./Collapsible";
     import BlogEntry from "./BlogEntry";
-    import * as BlogEntryModel from "../model/BlogEntry";
+    import * as V1BlogEntry from "../tiny-blog-api/client/PublicV1alpha/BlogEntry"
 
     export default {
         name: "Blog",
@@ -30,14 +30,19 @@
         }),
         methods: {
             fetchEntries(selectedTags) {
-                this.blogEntries = [
-                    new BlogEntryModel.default(`${selectedTags}`, "Content 1", "Firstname Lastname", Date(), ["Apfel", "Gehirnpilz"]),
-                    new BlogEntryModel.default("Article 2", "Content 2", "Firstname Lastname", Date(), ["Apfel", "Himbeere"]),
-                    new BlogEntryModel.default("Article 3", "Content 3", "Firstname Lastname", Date(), ["Ein Schwein"])
-                ];
+                let future;
+                if (selectedTags.length > 0) {
+                    future = V1BlogEntry.getBlogEntriesByTag(selectedTags, 0, 50);
+                } else {
+                    future = V1BlogEntry.getBlogEntriesByNewest(0, 50);
+                }
+                future.fork(
+                    error => this.$emit("fetchFailed", error),
+                    entries => this.blogEntries = entries
+                );
             },
             fetchTags() {
-                this.tags = [
+                this.tags = [ // TODO
                     "Apfel", "Himbeere", "Gehirnpilz", "Giraffentorte", "Ein Schwein"
                 ];
             }
