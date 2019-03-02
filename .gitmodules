@@ -1,6 +1,3 @@
-[submodule "src/api/tiny-blog-api"]
-	path = src/api/tiny-blog-api
-	url = https://github.com/strangedev/tiny-blog-api
 [submodule "src/tiny-blog-api"]
 	path = src/tiny-blog-api
 	url = https://github.com/strangedev/tiny-blog-api
