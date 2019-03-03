@@ -19,7 +19,6 @@
     import TagSelector from "./TagSelector";
     import Collapsible from "./Collapsible";
     import BlogEntry from "./BlogEntry";
-    import * as V1BlogEntry from "../tiny-blog-api/client/PublicV1alpha/BlogEntry"
 
     export default {
         name: "Blog",
@@ -29,17 +28,8 @@
             tags: []
         }),
         methods: {
-            fetchEntries(selectedTags) {
-                let future;
-                if (selectedTags.length > 0) {
-                    future = V1BlogEntry.getBlogEntriesByTag(selectedTags, 0, 50);
-                } else {
-                    future = V1BlogEntry.getBlogEntriesByNewest(0, 50);
-                }
-                future.fork(
-                    error => this.$emit("fetchFailed", error),
-                    entries => this.blogEntries = entries
-                );
+            fetchEntries() {
+               return [];  // TODO
             },
             fetchTags() {
                 this.tags = [ // TODO

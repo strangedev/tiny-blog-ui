@@ -15,13 +15,13 @@
 </template>
 
 <script>
-    import BlogEntry from '../tiny-blog-api/tiny-blog-model/v1alpha/BlogEntry'
+    import {PublicV1alpha} from "tiny-blog-api"
 
     export default {
         name: "BlogEntry",
         props: {
             blogEntry: {
-                type: BlogEntry,
+                type: PublicV1alpha.model.BlogEntry,
                 default: () => ({})
             }
         }
