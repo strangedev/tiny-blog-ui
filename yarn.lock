@@ -667,22 +667,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@brillout/fetch@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@brillout/fetch/-/fetch-0.1.2.tgz#71bccf9476a04fa58ae9721683a9849fcddd385b"
-  integrity sha512-epUz64Rqv/0vL5y2LEF0Mv3/MR4OtaAXwWdTYb4W5RfYh5FT5E5iUHuW5WRMWuL+nZX9RNcGTFwtK1wXbMUveA==
-  dependencies:
-    node-fetch "^1.7.3"
-    reassert "^1.1.16"
-
-"@brillout/format-text@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@brillout/format-text/-/format-text-0.1.3.tgz#882996ffe8c774f4a56fd20c5964037d641b935f"
-  integrity sha512-79/JKUOr+POW3XAfRDDxoxCjGBeD5KVwkzBWhK7KPA66HCTwEqb7unqxfVGSJZ9MnL/NiMb0shhzRkydMC/YFg==
-  dependencies:
-    reassert "^1.1.14"
-    string-width "^2.1.1"
-
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz#be7c7846128b88f6a9b1d1261a0ad06eb5c0fdf8"
@@ -2262,6 +2246,14 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-fetch@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.1.tgz#3f207bbd829a76e9aa2a953348bd1f2a3cf388a7"
+  integrity sha512-qWtpgBAF8ioqBOddRD+pHhrdzm/UWOArkrlIU7c08DlNbOxo5GfUbSY2vr90ZypWf0raW+HNN1F38pi5CEOjiQ==
+  dependencies:
+    node-fetch "2.3.0"
+    whatwg-fetch "3.0.0"
+
 cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -2829,13 +2821,6 @@ encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
-
-encoding@^0.1.11:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/encoding/-/encoding-0.1.12.tgz#538b66f3ee62cd1ab51ec323829d1f9480c74beb"
-  integrity sha1-U4tm8+5izRq1HsMjgp0flIDHS+s=
-  dependencies:
-    iconv-lite "~0.4.13"
 
 end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   version "1.4.1"
@@ -3975,7 +3960,7 @@ iconv-lite@0.4.23:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-iconv-lite@^0.4.17, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+iconv-lite@^0.4.17, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   integrity sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
@@ -4381,7 +4366,7 @@ is-resolvable@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
   integrity sha512-qgDYXFSR5WvEfuS5dMj6oTMEbrrSaM0CrFk2Yiq/gXnBvD9pMa2jGXxyhGLfvhZpuMZe18CJpFxAt3CRs42NMg==
 
-is-stream@^1.0.1, is-stream@^1.1.0:
+is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
@@ -5109,13 +5094,10 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-fetch@^1.7.3:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
-  integrity sha512-NhZ4CsKx7cYm2vSrBAr2PvFOe6sWDf0UYLRqA6svUYg7+/TSfVAu49jYC4BvQ4Sms9SZgdqGBgroqfDhJdTyKQ==
-  dependencies:
-    encoding "^0.1.11"
-    is-stream "^1.0.1"
+node-fetch@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
 
 node-forge@0.7.5:
   version "0.7.5"
@@ -6271,13 +6253,6 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-reassert@^1.1.14, reassert@^1.1.16:
-  version "1.1.21"
-  resolved "https://registry.yarnpkg.com/reassert/-/reassert-1.1.21.tgz#0e61cde7d2dde876d301342153cd9b1c7459649f"
-  integrity sha512-Ff2/AaIE5LDTrsEBUDKFb65klJki9xibTKi7loj9bGxBrQBb4BubgvJLEyKRlzrr4SFmg0QzfdcTojU9NHn0Zw==
-  dependencies:
-    "@brillout/format-text" "^0.1.3"
-
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-7.0.0.tgz#107405afcc4a190ec5ed450ecaa00ed0cafa7a4c"
@@ -7291,11 +7266,11 @@ timsort@^0.3.0:
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
 tiny-blog-api@^0.1.1:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/tiny-blog-api/-/tiny-blog-api-0.1.6.tgz#583cb79ea35c3eb2367f75640c74544badcf3f0e"
-  integrity sha512-r7eAWJceryfuxZ/EYVvyZxgxpH8ZcRgDJkQ/bK6uz2rt8IhGTaJrXk6VUrwPmDqlAldfiDBtxryGiqFRPbESmA==
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/tiny-blog-api/-/tiny-blog-api-0.1.8.tgz#c0e4170618db608f631d1aea5cd6c1ff5d2a1ee7"
+  integrity sha512-GTJ2e/eFRk30DnyIa4GJb4WNmDzry9aeptO5pnlFqPRB7goOjiihCrd4wWmfeNVcCivt/USuUoUQLJJoNIkDjw==
   dependencies:
-    "@brillout/fetch" "^0.1.2"
+    cross-fetch "^3.0.1"
     fluture "^10.3.1"
     ramda "^0.26.1"
     tiny-blog-model "^0.1.2"
@@ -7877,6 +7852,11 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
   integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
+
+whatwg-fetch@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
+  integrity sha512-9GSJUgz1D4MfyKU7KRqwOjXCXTqWdFNvEr7eUBYchQiVc744mqK/MzXPNR2WsPkmkOa4ywfg8C2n8h+13Bey1Q==
 
 which-module@^2.0.0:
   version "2.0.0"

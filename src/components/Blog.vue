@@ -1,10 +1,10 @@
 <template>
     <div>
-        <TagSelector :tags="tags"
+        <TagSelector :tags="displayedTags"
                      v-on:selection-changed="fetchEntries($event)"
         ></TagSelector>
         <div>
-            <Collapsible v-for="entry in blogEntries"
+            <Collapsible v-for="entry in displayedBlogEntries"
                          :key="entry.title"
             >
                 <BlogEntry v-slot:content
@@ -19,22 +19,23 @@
     import TagSelector from "./TagSelector";
     import Collapsible from "./Collapsible";
     import BlogEntry from "./BlogEntry";
+    import { mapGetters } from 'vuex'
 
     export default {
         name: "Blog",
         components: {BlogEntry, Collapsible, TagSelector},
-        data: () => ({
-            blogEntries: [],
-            tags: []
-        }),
+        computed: {
+            ...mapGetters([
+                'displayedBlogEntries',
+                'displayedTags'
+            ])
+        },
         methods: {
             fetchEntries() {
                return [];  // TODO
             },
             fetchTags() {
-                this.tags = [ // TODO
-                    "Apfel", "Himbeere", "Gehirnpilz", "Giraffentorte", "Ein Schwein"
-                ];
+                this.$store.dispatch("fetchTags").then();
             }
         },
         mounted: function () {
